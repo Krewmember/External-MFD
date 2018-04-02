@@ -77,9 +77,24 @@ public class RPM : MonoBehaviour {
 		RollText.text = Roll.ToString("000.0°");
 		PitchText.text = Pitch.ToString("000.0°");
 		SRFSpeedText.text = SrfSpeed.ToString("0m/s");
-		AltText.text = MeanAltitude.ToString("0.0 m");
 		ORBVelText.text = OrbitalVelocity.ToString("0.0 m/s");
-		RadAltText.text = RadarAltitude.ToString("0.000 m");
+		if (MeanAltitude > 999.9) 
+		{
+			AltText.text = MeanAltitude / 1000.ToString ("0.0 Km");
+		} 
+		else 
+		{
+			AltText.text = MeanAltitude.ToString ("0.0 m");
+		}
+
+		if (RadarAltitude > 999.9) 
+		{
+			RadAltText.text = RadarAltitude / 1000.ToString("0.0 Km");
+		} 
+		else 
+		{
+			RadAltText.text = RadarAltitude.ToString("0.000 m");
+		}
 		HORSpeedText.text = HorizontalSpeed.ToString("0.00 m/s");
 		VERTSpeedText.text = VerticalSpeed.ToString("0.00 m/s");
 		ThrottleText.text = Throttle.ToString("0 %");
