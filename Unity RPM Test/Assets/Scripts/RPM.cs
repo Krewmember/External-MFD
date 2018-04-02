@@ -80,7 +80,8 @@ public class RPM : MonoBehaviour {
 		ORBVelText.text = OrbitalVelocity.ToString("0.0 m/s");
 		if (MeanAltitude > 999.9) 
 		{
-			AltText.text = MeanAltitude / 1000.ToString ("0.0 Km");
+			Double mAlt = MeanAltitude / 1000;
+			AltText.text = mAlt.ToString ("0.0 Km");
 		} 
 		else 
 		{
@@ -89,7 +90,8 @@ public class RPM : MonoBehaviour {
 
 		if (RadarAltitude > 999.9) 
 		{
-			RadAltText.text = RadarAltitude / 1000.ToString("0.0 Km");
+			Double rAlt = RadarAltitude / 1000;
+			RadAltText.text = rAlt.ToString("0.0 Km");
 		} 
 		else 
 		{
